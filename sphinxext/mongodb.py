@@ -427,13 +427,21 @@ class CodeBlock(sphinx.directives.code.CodeBlock):
 
         if options.get('copyable', 'true') != 'false':
             codeblock[0]['classes'] += ['copyable-code-block']
-            br += create_button('copy', False, ['code-button--copy'])
+            br += create_button('copy', False, classes=['code-button--copy'])
 
         if options.get('button-github'):
-            br += create_button('github', options['button-github'])
+            br += create_button(
+                'github',
+                options['button-github'],
+                classes=['code-button--github']
+            )
 
         if options.get('button-stitch'):
-            br += create_button('stitch', options['button-stitch'])
+            br += create_button(
+                'stitch',
+                options['button-stitch'],
+                classes=['code-button--stitch']
+            )
 
         container += br
         container += codeblock

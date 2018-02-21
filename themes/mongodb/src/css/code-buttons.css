@@ -1,21 +1,8 @@
-/* .button-code-block-container .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.container {
-  padding-left: 0;
-  padding-right: 0;
-}*/
-
 .button-row {
-  /* background-color: #3a3a3a; */
-  background-color: #494747;
-  /* background-color: #f5f6f7; */
-  /* background-image: url(https://media.mongodb.org/code-block-bg.png); */
+  /* background-color: #494747; */
+  background-image: url(https://media.mongodb.org/code-block-bg.png);
   display: flex;
   flex-direction: row-reverse;
-  /* border: 1px solid rgb(186, 184, 184); */
   border-left: 5px solid rgb(73, 71, 71);
 }
 
@@ -24,17 +11,20 @@
   flex-grow: 0;
   min-width: 75px;
   background: #7a7b7b;
-  padding: 2px 8px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
 
-  margin: 4px 2px;
-  border-radius: 2px;
+  height: 24px;
+  line-height: 16px;
+  margin: 0px 1px;
+  padding: 4px 8px;
+  border-radius: 0px;
 }
 
 .code-button:first-of-type {
   margin-right: 4px;
+  margin-right: 0px;
 }
 
 .code-button:hover, .code-button:focus {
@@ -48,8 +38,8 @@
 }
 
 .button-code-block pre {
-  margin-top: 0;
-  padding-top: 12px;
+  margin: 0 auto;
+  padding-top: 4px;
   padding-bottom: 12px;
 }
 
