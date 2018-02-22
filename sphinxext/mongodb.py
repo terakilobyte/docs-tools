@@ -401,51 +401,58 @@ def create_button(button_type, link, classes=[]):
     return button
 
 
-class CodeBlock(sphinx.directives.code.CodeBlock):
+def add_buttons(parent_class):
     """
     Add copy, show in stitch, and github buttons to code block.
     """
-    option_spec = sphinx.directives.code.CodeBlock.option_spec.copy()
-    option_spec.update({
-        'button-github': directives.uri,
-        'button-stitch': directives.uri,
-        'copyable': lambda argument: directives.choice(argument,
-                                                       ('true', 'false', None)),
-    })
+    class InnerClass(parent_class):
+        option_spec = parent_class.option_spec.copy()
+        option_spec.update({
+            'button-github': directives.uri,
+            'button-stitch': directives.uri,
+            'copyable': lambda argument: directives.choice(argument,
+                                                           ('true', 'false', None)),
+        })
 
-    def run(self):
-        codeblock = sphinx.directives.code.CodeBlock.run(self)
+        def run(self):
+            codeblock = parent_class.run(self)
 
-        # Only provide buttons if we are generating html
-        config = self.state.document.settings.env.config
-        if not config._raw_config['tags'].eval_condition('html'):
-            return codeblock
+            # Only provide buttons if we are generating html
+            config = self.state.document.settings.env.config
+            if not config._raw_config['tags'].eval_condition('html'):
+                return codeblock
 
-        options = self.options
-        container = code_container('')
-        br = code_button_row('')
+            options = self.options
+            container = code_container('')
+            br = code_button_row('')
 
-        if options.get('copyable', 'true') != 'false':
-            codeblock[0]['classes'] += ['copyable-code-block']
-            br += create_button('copy', False, classes=['code-button--copy'])
+            if options.get('copyable', 'true') != 'false':
+                codeblock[0]['classes'] += ['copyable-code-block']
+                br += create_button('copy', False, classes=['code-button--copy'])
 
-        if options.get('button-github'):
-            br += create_button(
-                'github',
-                options['button-github'],
-                classes=['code-button--github']
-            )
+            if options.get('button-github'):
+                br += create_button(
+                    'github',
+                    options['button-github'],
+                    classes=['code-button--github']
+                )
 
-        if options.get('button-stitch'):
-            br += create_button(
-                'stitch',
-                options['button-stitch'],
-                classes=['code-button--stitch']
-            )
+            if options.get('button-stitch'):
+                br += create_button(
+                    'stitch',
+                    options['button-stitch'],
+                    classes=['code-button--stitch']
+                )
 
-        container += br
-        container += codeblock
-        return [container]
+            container += br
+            container += codeblock
+            return [container]
+
+    return InnerClass
+
+
+CodeBlock = add_buttons(sphinx.directives.code.CodeBlock)
+LiteralInclude = add_buttons(sphinx.directives.code.LiteralInclude)
 
 
 def setup(app):
@@ -462,6 +469,8 @@ def setup(app):
         visit_code_container, depart_code_container
     ))
     directives.register_directive('code-block', CodeBlock)
+    directives.register_directive('sourcecode', CodeBlock)
+    directives.register_directive('literalinclude', LiteralInclude)
 
     # Do NOT turn on parallel reads until we know what's causing massive
     # (2+ GB per worker) memory bloat and thrashing.
