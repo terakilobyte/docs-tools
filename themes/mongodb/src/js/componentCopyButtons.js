@@ -12,7 +12,7 @@ export function setup() {
             return;
         }
 
-        const originalText = copyButton.innerText;
+        const originalText = copyButton.innerText.trim();
         copyButton.addEventListener('click', () => {
             const tempElement = document.createElement('textarea');
             tempElement.style.position = 'fixed';
@@ -29,7 +29,7 @@ export function setup() {
                 copyButton.innerText = 'copied';
                 window.setTimeout(() => {
                     copyButton.innerText = originalText;
-                }, 1000);
+                }, 500);
             } catch (err) {
                 console.error(err);
             }
