@@ -20,6 +20,9 @@
   margin: 0px 1px;
   padding: 4px 8px;
   border-radius: 0px;
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .code-button:first-of-type {
@@ -34,7 +37,7 @@
 }
 
 .code-button:active {
-    background: #7a7b7b;
+  background: #7a7b7b;
 }
 
 .button-code-block pre {
