@@ -12,7 +12,7 @@ URIWRITER_TEMPLATE = fett.Template('''
 ''')
 
 LEADING_WHITESPACE = re.compile(r'^\n?(\x20+)')
-PAT_KEY_VALUE = re.compile(r'([a-z_]+):((?:[^\n]*\n)(?:^(?:\x20|\n)+[^\n]*\n?)*)', re.M)
+PAT_KEY_VALUE = re.compile(r'([a-z_]+):(.*)', re.M)
 
 
 
@@ -26,8 +26,9 @@ def parse_keys(lines):
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
             continue
-        value = match.group(2)
+        value = match.group(1)
         print "value" + value
+        print match
         indentation_match = LEADING_WHITESPACE.match(value)
         if indentation_match is None:
             value = value.strip()
