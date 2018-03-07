@@ -20,11 +20,12 @@ PAT_KEY_VALUE = re.compile(r'([a-z_]+):((?:[^\n]*\n)(?:^(?:\x20|\n)+[^\n]*\n?)*)
 def parse_keys(lines):
     """docutils field list parsing is busted. Just do this ourselves."""
     result = {}
+    print lines
     text = '\n'.join(lines).replace('\t', '    ')
+    print text
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
             continue
-        print match
         value = match.group(2)
         indentation_match = LEADING_WHITESPACE.match(value)
         if indentation_match is None:
