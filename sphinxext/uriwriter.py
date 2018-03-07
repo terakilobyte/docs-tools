@@ -17,10 +17,13 @@ class UriwriterDirective(Directive):
     required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = True
+    
+  
+      
 
     def run(self):
-        data = {'replaceStringDummy': "nada"}
-        rendered = URIWRITER_TEMPLATE.render(data)
+        options = parse_keys(self.content)
+        rendered = URIWRITER_TEMPLATE.render(options)
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
         self.state_machine.insert_input(rendered_lines, '')
