@@ -7,20 +7,19 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter"
-     data-hello="hi">{{ hello }}
+   <p class="uriwriter">Hiya {{ uriwriter.replaceString }}
    </p>
 ''')
 
 
 class UriwriterDirective(Directive):
     has_content = False
-    required_arguments = 1
+    required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = True
 
     def run(self):
-        data = {'hello': self.arguments[0]}
+        data = {'replaceStringDummy': "nada"}
         rendered = URIWRITER_TEMPLATE.render(data)
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
