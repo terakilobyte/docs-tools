@@ -24,7 +24,7 @@ def parse_keys(lines):
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
             continue
-
+        print match
         value = match.group(2)
         indentation_match = LEADING_WHITESPACE.match(value)
         if indentation_match is None:
@@ -48,7 +48,7 @@ class UriwriterDirective(Directive):
     optional_arguments = 0
     final_argument_whitespace = True
     
-  
+    print self.content
       
 
     def run(self):
