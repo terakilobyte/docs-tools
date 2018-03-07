@@ -7,7 +7,7 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter">Hiya {{ uriwriter.replaceString }}
+   <p class="uriwriter">Hiya {{ uriwriter.tring }}
    </p>
 ''')
 
@@ -27,6 +27,7 @@ def parse_keys(lines):
         if match is None:
             continue
         value = match.group(2)
+        print "value" + value
         indentation_match = LEADING_WHITESPACE.match(value)
         if indentation_match is None:
             value = value.strip()
