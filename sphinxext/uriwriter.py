@@ -48,10 +48,11 @@ class UriwriterDirective(Directive):
     optional_arguments = 0
     final_argument_whitespace = True
     
-    print self.content
+    
       
 
     def run(self):
+        print self.content
         options = parse_keys(self.content)
         rendered = URIWRITER_TEMPLATE.render(options)
         rendered_lines = statemachine.string2lines(
