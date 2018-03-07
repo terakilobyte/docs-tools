@@ -13,7 +13,7 @@ URIWRITER_TEMPLATE = fett.Template('''
 
 
 class UriwriterDirective(Directive):
-    has_content = False
+    has_content = True
     required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = True
