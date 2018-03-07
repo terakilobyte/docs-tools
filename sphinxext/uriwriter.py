@@ -11,6 +11,11 @@ URIWRITER_TEMPLATE = fett.Template('''
    </p>
 ''')
 
+LEADING_WHITESPACE = re.compile(r'^\n?(\x20+)')
+PAT_KEY_VALUE = re.compile(r'([a-z_]+):((?:[^\n]*\n)(?:^(?:\x20|\n)+[^\n]*\n?)*)', re.M)
+
+
+
 
 def parse_keys(lines):
     """docutils field list parsing is busted. Just do this ourselves."""
