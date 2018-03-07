@@ -12,6 +12,31 @@ URIWRITER_TEMPLATE = fett.Template('''
 ''')
 
 
+def parse_keys(lines):
+    """docutils field list parsing is busted. Just do this ourselves."""
+    result = {}
+    text = '\n'.join(lines).replace('\t', '    ')
+    for match in PAT_KEY_VALUE.finditer(text):
+        if match is None:
+            continue
+
+        value = match.group(2)
+        indentation_match = LEADING_WHITESPACE.match(value)
+        if indentation_match is None:
+            value = value.strip()
+        else:
+            indentation = len(indentation_match.group(1))
+            lines = [line[indentation:] for line in value.split('\n')]
+            if lines[-1] == '':
+                lines.pop()
+
+            value = '\n'.join(lines)
+
+        result[match.group(1)] = value
+
+    return result
+
+
 class UriwriterDirective(Directive):
     has_content = True
     required_arguments = 0
