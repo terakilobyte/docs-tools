@@ -7,7 +7,11 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter">{{ url }}
+   <p class="uriwriter"><FORM NAME="myform" ACTION="" METHOD="GET">
+Enter something in the box: <BR>
+<INPUT TYPE="text" NAME="inputbox" VALUE=""><P>
+<INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
+</FORM>{{ url }}
    </p>
 ''')
 
