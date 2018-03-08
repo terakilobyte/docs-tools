@@ -18,16 +18,12 @@ URIWRITER_TEMPLATE = fett.Template('''
       <input id="hostname" type="text" name="hostname" required>
       <label for="hostname">Hostname</label>
       <div class="after"></div>
-    </fieldset>
-    <fieldset>
       <input id="port" type="text" name="port" required>
       <label for="port">Port</label>
       <div class="port"></div>
+      <button id="add">+</button>
     </fieldset>
     <fieldset>
-      <button id+"add">+</button>
-    </fieldset>
-     <fieldset>
       <input id="db" type="text" name="db" required>
       <label for="db">database name</label>
       <div class="db"></div>
