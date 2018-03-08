@@ -9,7 +9,7 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
   <form action="#" autocomplete="off">
-    <fieldset>
+    <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
       <div class="after"></div>
@@ -24,6 +24,7 @@ URIWRITER_TEMPLATE = fett.Template('''
       <label for="authdb">Auth DB</label>
       <div class="authdb"></div>
     </fieldset>
+    </div>
     <fieldset>
       <input id="hostname" type="text" name="hostname" required>
       <label for="hostname">Hostname or IP</label>
