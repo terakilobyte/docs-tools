@@ -33,7 +33,8 @@ URIWRITER_TEMPLATE = fett.Template('''
     <fieldset>
       <input id="port" type="text" name="port" required>
       <label for="port">Port</label>
-      <div class="port"></div>
+        </fieldset>
+    <fieldset>
       <button id="add">+</button>
        <div class="host"></div>
     </fieldset>
