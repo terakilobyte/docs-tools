@@ -15,15 +15,6 @@ URIWRITER_TEMPLATE = fett.Template('''
       <div class="after"></div>
     </fieldset>
     <fieldset>
-      <input id="hostname" type="text" name="hostname" required>
-      <label for="hostname">Hostname</label>
-      <input id="port" type="text" name="port" required>
-      <label for="port">Port</label>
-      <div class="port"></div>
-      <button id="add">+</button>
-       <div class="host"></div>
-    </fieldset>
-    <fieldset>
       <input id="db" type="text" name="db" required>
       <label for="db">database name</label>
       <div class="db"></div>
@@ -34,7 +25,15 @@ URIWRITER_TEMPLATE = fett.Template('''
       <div class="authdb"></div>
     </fieldset>
     <fieldset>
-      <button>Submit</button>
+      <input id="hostname" type="text" name="hostname" required>
+      <label for="hostname">Hostname or IP</label>
+    </fieldset>
+    <fieldset>
+      <input id="port" type="text" name="port" required>
+      <label for="port">Port</label>
+      <div class="port"></div>
+      <button id="add">+</button>
+       <div class="host"></div>
     </fieldset>
   </form>
    </p>
