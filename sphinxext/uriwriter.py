@@ -35,8 +35,11 @@ URIWRITER_TEMPLATE = fett.Template('''
       <label for="port">Port</label>
         </fieldset>
     <fieldset>
-      <button id="add">+</button>
+      <button id="add" click="addRow()">+</button>
        <div class="host"></div>
+    </fieldset>
+    <fieldset>
+       <input id="formatString" type="hidden" value="{{url}}"/>
     </fieldset>
     </div>
   </form>
