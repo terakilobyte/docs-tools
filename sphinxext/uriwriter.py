@@ -7,7 +7,7 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter">Hiya {{ uriwriter.tring }}
+   <p class="uriwriter">Hiya {{ url }}
    </p>
 ''')
 
