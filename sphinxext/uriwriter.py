@@ -8,10 +8,21 @@ URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
    <p class="uriwriter">
-   <FORM class="uriwriter" NAME="myform" ACTION="" METHOD="GET">
-    <INPUT TYPE="text" NAME="inputbox" VALUE="">
-    <INPUT TYPE="button" NAME="button" Value="Click" onClick="">
-   </FORM>
+  <form action="#" autocomplete="off">
+    <fieldset>
+      <input id="first" type="text" name="first" required>
+      <label for="first">First Name</label>
+      <div class="after"></div>
+    </fieldset>
+    <fieldset>
+      <input id="last" type="text" name="last" required>
+      <label for="last">Last Name</label>
+      <div class="after"></div>
+    </fieldset>
+    <fieldset>
+      <button>Submit</button>
+    </fieldset>
+  </form>
    </p>
 ''')
 
