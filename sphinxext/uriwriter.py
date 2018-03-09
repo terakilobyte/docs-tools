@@ -16,8 +16,6 @@ URIWRITER_TEMPLATE = fett.Template('''
               
        function addRow(urlstring) {
            if (current != urlstring) {
-                console.log("ON REPLACMENT");
-                return;
                 rollback();
             }
            event.preventDefault();
