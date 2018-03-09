@@ -58,9 +58,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            
  
    </script>
-   <div class="uri">replace!</div>
-  
-  <form id="{{url}}" autocomplete="off">
+   <form id="{{url}}" autocomplete="off">
     
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
@@ -92,7 +90,6 @@ URIWRITER_TEMPLATE = fett.Template('''
     </fieldset>
     </div>
   </form>
-  <div class="uri">replace again!</div>
    </p>
 ''')
 
