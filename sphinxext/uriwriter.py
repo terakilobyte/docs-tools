@@ -10,7 +10,13 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
    <script type="text/javascript">
+       var rollback = urlstring;
+       var current = urlstring;
+              
        function addRow(urlstring) {
+           if (current != urlstring) {
+                rollback();
+            }
            event.preventDefault();
            var uri = urlstring;
            var elements = document.getElementById(urlstring).elements;
@@ -28,9 +34,25 @@ URIWRITER_TEMPLATE = fett.Template('''
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
                                     replace("{username}", obj['username']);
+               current = item.innerHTML;
                console.log(item.innerHTML);
-           }        
-        }
+           }  
+       }   
+           
+       function rollback() {
+              
+          var replacementTarget = document.getElementsByTagName("pre");
+              
+          for(var i = 0 ; i < replacementTarget.length ; i++){
+                  
+              var item = replacementTarget.item(i);
+               
+              item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
+               
+              console.log(item.innerHTML);
+          }
+                   
+       }
    </script>
    <div class="uri">replace!</div>
   
