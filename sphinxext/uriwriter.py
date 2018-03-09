@@ -10,7 +10,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
        function addRow(urlstring) {
-          console.log("ADDED A ROW:" + url);
+          console.log("ADDED A ROW:" + urlstring);
        }
    </script>
   <form action="#" autocomplete="off">
