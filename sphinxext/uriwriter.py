@@ -13,7 +13,7 @@ URIWRITER_TEMPLATE = fett.Template('''
           console.log("ADDED A ROW:" + url);
        }
    </script>
-  <form action="#" autocomplete="off">
+  <form action="#" onsubmit="return addRow({{url}})" autocomplete="off">
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
