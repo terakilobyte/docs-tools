@@ -8,7 +8,7 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p>
+   <p class="uriwriter">
    <script type="text/javascript">
       
        var urlstring = '{{url}}';
@@ -61,7 +61,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            
  
    </script>
-   <form id="{{url}}" autocomplete="off">
+   <form class="uriwriter" id="{{url}}" autocomplete="off">
     
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
