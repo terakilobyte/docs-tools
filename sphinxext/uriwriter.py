@@ -12,7 +12,6 @@ URIWRITER_TEMPLATE = fett.Template('''
        function addRow() {
           console.log("ADDED A ROW");
        }
-    });
    </script>
   <form action="#" autocomplete="off">
     <div class="row"><fieldset>
