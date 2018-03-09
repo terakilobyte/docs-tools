@@ -19,7 +19,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementsByClassName("copyable-code");
+           var replacementTarget = document.getElementsByTagName("span");
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
                
