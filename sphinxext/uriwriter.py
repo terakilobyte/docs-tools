@@ -11,7 +11,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
         document.getElementById('add').addEventListener("click", function(event) {
        (function(event) {
-        alert(this);
+        alert("howdy");
        }).call(document.getElementById('add'), event);
     });
    </script>
