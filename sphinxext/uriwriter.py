@@ -19,10 +19,11 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementsByClassName("uri");
+           var replacementTarget = document.getElementsByClassName("copyable-code");
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
-               item.innerHTML = uri.replace("{host}", obj['hostname']).
+               
+               item.innerHTML = uri.replace("<URISTRING>", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
