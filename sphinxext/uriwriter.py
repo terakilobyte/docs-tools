@@ -8,6 +8,13 @@ URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
    <p class="uriwriter">
+   <script type="text/javascript">
+        document.getElementById('add').addEventListener("click", function(event) {
+       (function(event) {
+        alert(this);
+       }).call(document.getElementById('add'), event);
+    });
+   </script>
   <form action="#" autocomplete="off">
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
