@@ -10,11 +10,14 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
    <script type="text/javascript">
+      
        var rollback = urlstring;
        var current = urlstring;
               
        function addRow(urlstring) {
            if (current != urlstring) {
+                console.log("ON REPLACMENT");
+                return;
                 rollback();
             }
            event.preventDefault();
