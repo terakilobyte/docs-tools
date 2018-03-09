@@ -23,7 +23,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
                
-               item.innerHTML = uri.replace("<URISTRING>", uri).replace("{host}", obj['hostname']).
+               item.innerHTML = item.innerHTML.replace("<URISTRING>", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
