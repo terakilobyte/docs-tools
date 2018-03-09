@@ -123,10 +123,10 @@ class UriwriterDirective(Directive):
         print self.content
         options = parse_keys(self.content)
         print options
-        if options['target'] is None:
-            rendered = URIWRITER_TEMPLATE.render(options)
-        else:
+        try options['target']:
             rendered = URIWRITER_TEMPLATE_TARGET.render(options)
+        except:
+            rendered = URIWRITER_TEMPLATE.render(options)
        
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
