@@ -11,8 +11,8 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
-       var rollback = urlstring;
-       var current = urlstring;
+       var rollback = '{{url}}';
+       var current = '{{url}}';
               
        function addRow(urlstring) {
            if (current != urlstring) {
