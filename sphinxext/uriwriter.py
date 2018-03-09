@@ -123,9 +123,9 @@ class UriwriterDirective(Directive):
         print self.content
         options = parse_keys(self.content)
         print options
-        try options['target']:
+        if hasattr(options, 'target'):
             rendered = URIWRITER_TEMPLATE_TARGET.render(options)
-        except:
+        else:
             rendered = URIWRITER_TEMPLATE.render(options)
        
         rendered_lines = statemachine.string2lines(
