@@ -18,17 +18,17 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementById("uri");
-           
-           
-           console.log(replacementTarget);
-           
+           var replacementTarget = document.getElementsByClassNames("uri");
+           for(var i = 0 ; i < replacementTarget.length ; i++){
+               var item = elements.item(i);
+               console.log(item);
+           }        
            
            console.log(obj);
         }
    </script>
   <form id="{{url}}" autocomplete="off">
-    <div id="uri">replace!</div>
+    <div class="uri">replace!</div>
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
@@ -59,6 +59,7 @@ URIWRITER_TEMPLATE = fett.Template('''
     </fieldset>
     </div>
   </form>
+  <div class="uri">replace again!</div>
    </p>
 ''')
 
