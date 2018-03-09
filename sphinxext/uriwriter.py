@@ -4,7 +4,8 @@ from docutils.parsers.rst import Directive, directives
 from docutils import statemachine
 from docutils.utils.error_reporting import ErrorString
 
-URIWRITER_TEMPLATE = fett.Template('''
+
+URIWRITER_TEMPLATE = return fett.Template('''
 .. raw:: html
 
    <p class="uriwriter">
@@ -68,6 +69,13 @@ URIWRITER_TEMPLATE = fett.Template('''
    </p>
 ''')
 
+URIWRITER_TEMPLATE_TARGET = return fett.Template('''
+.. raw:: html
+   <div class="uri">URI_STRING</div>
+''')
+
+
+
 LEADING_WHITESPACE = re.compile(r'^\n?(\x20+)')
 PAT_KEY_VALUE = re.compile(r'([a-z_]+):(.*)', re.M)
 
@@ -115,7 +123,11 @@ class UriwriterDirective(Directive):
         print self.content
         options = parse_keys(self.content)
         print options
-        rendered = URIWRITER_TEMPLATE.render(options)
+        if options['target'] is None:
+            rendered = URIWRITER_TEMPLATE.render(options)
+        else
+            rendered = URIWRITER_TEMPLATE_TARGET.render(options)
+       
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
         self.state_machine.insert_input(rendered_lines, '')
