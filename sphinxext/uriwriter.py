@@ -9,10 +9,9 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
    <script type="text/javascript">
-        document.getElementById('add').addEventListener("click", function(event) {
-       (function(event) {
-        alert("howdy");
-       }).call(document.getElementById('add'), event);
+       function addRow() {
+          console.log("ADDED A ROW");
+       }
     });
    </script>
   <form action="#" autocomplete="off">
@@ -42,7 +41,7 @@ URIWRITER_TEMPLATE = fett.Template('''
       <label for="port">Port</label>
         </fieldset>
     <fieldset>
-      <button id="add" click="addRow()">+</button>
+      <button id="add" onclick="addRow()">+</button>
        <div class="host"></div>
     </fieldset>
     <fieldset>
