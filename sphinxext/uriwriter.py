@@ -8,10 +8,10 @@ from docutils.utils.error_reporting import ErrorString
 URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter">
+   <p>
    <script type="text/javascript">
       
-       var rollback = '{{url}}';
+       var urlstring = '{{url}}';
        var current = '<URISTRING>';
               
        var rollback = function () {
