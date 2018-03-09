@@ -24,7 +24,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                
               item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
                
-              console.log(item.innerHTML);
+              //console.log(item.innerHTML);
           }
                    
        }       
@@ -47,7 +47,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = replacementTarget.item(i);
  
                if (item.innerHTML.indexOf(current)>-1) {
-               
+                   
                    item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
