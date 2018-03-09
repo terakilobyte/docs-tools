@@ -21,14 +21,13 @@ URIWRITER_TEMPLATE = fett.Template('''
            var replacementTarget = document.getElementsByClassName("uri");
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = elements.item(i);
-               console.log(item);
+               console.log('HI" + item);
            }        
-           
-           console.log(obj);
         }
    </script>
+   <div class="uri">replace!</div>
   <form id="{{url}}" autocomplete="off">
-    <div class="uri">replace!</div>
+    
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
