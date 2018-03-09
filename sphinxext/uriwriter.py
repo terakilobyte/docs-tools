@@ -28,7 +28,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
                                     replace("{username}", obj['username']);
-               console.log(item);
+               console.log(item.innerHTML);
            }        
         }
    </script>
