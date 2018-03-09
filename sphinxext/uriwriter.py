@@ -9,8 +9,8 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
    <script type="text/javascript">
-       function addRow() {
-          console.log("ADDED A ROW");
+       function addRow(url) {
+          console.log("ADDED A ROW:" + url);
        }
    </script>
   <form action="#" autocomplete="off">
@@ -40,11 +40,8 @@ URIWRITER_TEMPLATE = fett.Template('''
       <label for="port">Port</label>
         </fieldset>
     <fieldset>
-      <button id="add" onclick="addRow()">+</button>
+      <button id="add" onclick="addRow({{url}})">+</button>
        <div class="host"></div>
-    </fieldset>
-    <fieldset>
-       <input id="formatString" type="hidden" value="{{url}}"/>
     </fieldset>
     </div>
   </form>
