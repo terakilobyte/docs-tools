@@ -14,7 +14,7 @@ URIWRITER_TEMPLATE = fett.Template('''
        var rollback = '{{url}}';
        var current = '{{url}}';
               
-       function rollback() {
+       var rollback = function () {
               
           var replacementTarget = document.getElementsByTagName("pre");
               
