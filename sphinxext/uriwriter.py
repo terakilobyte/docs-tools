@@ -125,7 +125,7 @@ class UriwriterDirective(Directive):
         print options
         if options['target'] is None:
             rendered = URIWRITER_TEMPLATE.render(options)
-        else
+        else:
             rendered = URIWRITER_TEMPLATE_TARGET.render(options)
        
         rendered_lines = statemachine.string2lines(
