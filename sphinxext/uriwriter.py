@@ -12,7 +12,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
       
        var rollback = '{{url}}';
-       var current = '{{url}}';
+       var current = '<URISTRING>';
               
        var rollback = function () {
               
