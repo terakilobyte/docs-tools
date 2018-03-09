@@ -64,7 +64,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <form class="uriwriter" id="{{url}}" autocomplete="off">
     
     <div class="row"><fieldset>
-      <input id="username" type="text" name="username" required>
+      <input id="username" class="doodad" type="text" name="username" required>
       <label for="username">Username</label>
       <div class="after"></div>
     </fieldset>
