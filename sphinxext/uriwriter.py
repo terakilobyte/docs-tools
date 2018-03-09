@@ -12,7 +12,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
       
        var rollback = '{{url}}';
-       var current = '{{url}}';
+       var current = '<URISTRING>';
               
        var rollback = function () {
               
@@ -24,7 +24,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                
               item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
                
-              //console.log(item.innerHTML);
+              console.log(item.innerHTML);
           }
                    
        }       
@@ -32,7 +32,6 @@ URIWRITER_TEMPLATE = fett.Template('''
               
        function addRow(urlstring) {
            if (current != urlstring) {
-                console.log("ROLLING BACK");
                 rollback();
             }
            event.preventDefault();
@@ -47,16 +46,16 @@ URIWRITER_TEMPLATE = fett.Template('''
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
  
-            
-                   
-               item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
+               if (item.innerHTML.indexOf(current)>-1) {
+               
+                   item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
                                     replace("{username}", obj['username']);
-                current = item.innerHTML;
-                  
-               
+                   current = item.innerHTML;
+                   console.log(item.innerHTML);
+               }
            }  
        }   
            
