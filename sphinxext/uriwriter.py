@@ -10,6 +10,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
        function addRow(urlstring) {
+           event.preventDefault();
            var elements = document.getElementById(urlstring).elements;
            var obj ={};
            for(var i = 0 ; i < elements.length ; i++){
@@ -47,7 +48,7 @@ URIWRITER_TEMPLATE = fett.Template('''
       <label for="port">Port</label>
         </fieldset>
     <fieldset>
-      <button id="add" onclick="event.preventDefault(); addRow('{{url}};')">+</button>
+      <button id="add" onclick="addRow('{{url}};')">+</button>
     </fieldset>
     </div>
   </form>
