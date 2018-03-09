@@ -123,7 +123,8 @@ class UriwriterDirective(Directive):
         print self.content
         options = parse_keys(self.content)
         print options
-        if hasattr(options, 'target'):
+        for e in options
+        if 'target' in options:
             rendered = URIWRITER_TEMPLATE_TARGET.render(options)
         else:
             rendered = URIWRITER_TEMPLATE.render(options)
