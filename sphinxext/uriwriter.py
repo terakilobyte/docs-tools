@@ -11,7 +11,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
        function addRow(urlstring) {
            event.preventDefault();
-           var uri = uristring;
+           var uri = urlstring;
            var elements = document.getElementById(urlstring).elements;
            var obj ={};
            for(var i = 0 ; i < elements.length ; i++){
