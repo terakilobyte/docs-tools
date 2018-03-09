@@ -21,7 +21,10 @@ URIWRITER_TEMPLATE = fett.Template('''
            var replacementTarget = document.getElementsByClassName("uri");
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
-               item.innerHTML = uri.replace("{host}", obj['hostname']);
+               item.innerHTML = uri.replace("{host}", obj['hostname']).
+                                    replace("{port}", obj['port']).
+                                    replace("{authdb}", obj['authdb']).
+                                    replace("{username}", obj['username']);
                console.log(item);
            }        
         }
