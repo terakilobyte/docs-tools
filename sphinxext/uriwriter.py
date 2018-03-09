@@ -11,17 +11,25 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
        function addRow(urlstring) {
            event.preventDefault();
+           var uri = uristring;
            var elements = document.getElementById(urlstring).elements;
            var obj ={};
            for(var i = 0 ; i < elements.length ; i++){
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
+           var replacementTarget = document.getElementById("uri").elements;
+           
+           for(var i = 0 ; i < replacementTarget.length ; i++){
+               var item = elements.item(i);
+               console.log(item);
+           }
            
            console.log(obj);
         }
    </script>
   <form id="{{url}}" autocomplete="off">
+    <div id="uri">replace!</div>
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
