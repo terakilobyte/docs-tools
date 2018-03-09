@@ -14,6 +14,22 @@ URIWRITER_TEMPLATE = fett.Template('''
        var rollback = '{{url}}';
        var current = '{{url}}';
               
+       function rollback() {
+              
+          var replacementTarget = document.getElementsByTagName("pre");
+              
+          for(var i = 0 ; i < replacementTarget.length ; i++){
+                  
+              var item = replacementTarget.item(i);
+               
+              item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
+               
+              console.log(item.innerHTML);
+          }
+                   
+       }       
+              
+              
        function addRow(urlstring) {
            if (current != urlstring) {
                 rollback();
@@ -40,20 +56,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            }  
        }   
            
-       function rollback() {
-              
-          var replacementTarget = document.getElementsByTagName("pre");
-              
-          for(var i = 0 ; i < replacementTarget.length ; i++){
-                  
-              var item = replacementTarget.item(i);
-               
-              item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
-               
-              console.log(item.innerHTML);
-          }
-                   
-       }
+ 
    </script>
    <div class="uri">replace!</div>
   
