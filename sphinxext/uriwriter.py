@@ -5,7 +5,7 @@ from docutils import statemachine
 from docutils.utils.error_reporting import ErrorString
 
 
-URIWRITER_TEMPLATE = return fett.Template('''
+URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
    <p class="uriwriter">
@@ -69,7 +69,7 @@ URIWRITER_TEMPLATE = return fett.Template('''
    </p>
 ''')
 
-URIWRITER_TEMPLATE_TARGET = return fett.Template('''
+URIWRITER_TEMPLATE_TARGET = fett.Template('''
 .. raw:: html
    <div class="uri">URI_STRING</div>
 ''')
