@@ -18,7 +18,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementsByClassNames("uri");
+           var replacementTarget = document.getElementsByClassName("uri");
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = elements.item(i);
                console.log(item);
