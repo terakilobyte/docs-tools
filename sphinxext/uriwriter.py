@@ -18,7 +18,7 @@ URIWRITER_TEMPLATE = fett.Template('''
               
           var replacementTarget = document.getElementsByTagName("pre");
               
-          for(var i = 0 ; i < replacementTarget.length ; i++){
+          for (var i = 0 ; i < replacementTarget.length ; i++) {
                   
               var item = replacementTarget.item(i);
                
