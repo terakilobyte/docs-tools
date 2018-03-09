@@ -12,7 +12,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <script type="text/javascript">
       
        var rollback = '{{url}}';
-       var current = '&lt;URISTRING&gt;';
+       var current = '{{url}}';
               
        var rollback = function () {
               
@@ -47,16 +47,16 @@ URIWRITER_TEMPLATE = fett.Template('''
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
  
-               if (item.innerHTML.indexOf(current)>-1) {
+            
                    
-                   item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
+               item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
                                     replace("{username}", obj['username']);
-                   current = item.innerHTML;
-                   console.log(item.innerHTML);
-               }
+                current = item.innerHTML;
+                  
+               
            }  
        }   
            
