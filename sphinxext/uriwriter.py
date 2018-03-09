@@ -15,6 +15,8 @@ URIWRITER_TEMPLATE = fett.Template('''
        var current = '<URISTRING>';
               
        var rollback = function () {
+       
+          console.log("ROLLBACK");
               
           var replacementTarget = document.getElementsByTagName("pre");
               
@@ -24,7 +26,6 @@ URIWRITER_TEMPLATE = fett.Template('''
                
               item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
                
-              console.log(item.innerHTML);
           }
                    
        }       
@@ -46,11 +47,15 @@ URIWRITER_TEMPLATE = fett.Template('''
            for(var i = 0 ; i < replacementTarget.length ; i++){
                var item = replacementTarget.item(i);
  
-               item.innerHTML = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
+               var newString = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
                                     replace("{port}", obj['port']).
                                     replace("{db}", obj['db']).
                                     replace("{authdb}", obj['authdb']).
                                     replace("{username}", obj['username']);
+               if (newString!=item.innerHTML) {
+                  current = newString;
+                  item.innerHTML = current;
+               }
            }  
        }   
            
