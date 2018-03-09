@@ -10,10 +10,17 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
        function addRow(urlstring) {
-          console.log("ADDED A ROW:" + urlstring);
-       }
+           var elements = document.getElementById(urlstring).elements;
+           var obj ={};
+           for(var i = 0 ; i < elements.length ; i++){
+               var item = elements.item(i);
+               obj[item.name] = item.value;
+           }
+           
+           console.log(obj);
+        }
    </script>
-  <form action="#" autocomplete="off">
+  <form id="{{url}}" action="#" autocomplete="off">
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
