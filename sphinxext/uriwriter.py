@@ -20,7 +20,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            console.log(obj);
         }
    </script>
-  <form id="{{url}}" action="#" autocomplete="off">
+  <form id="{{url}}" autocomplete="off">
     <div class="row"><fieldset>
       <input id="username" type="text" name="username" required>
       <label for="username">Username</label>
