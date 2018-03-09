@@ -18,12 +18,11 @@ URIWRITER_TEMPLATE = fett.Template('''
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementById("uri").elements;
+           var replacementTarget = document.getElementById("uri");
            
-           for(var i = 0 ; i < replacementTarget.length ; i++){
-               var item = elements.item(i);
-               console.log(item);
-           }
+           
+           console.log(replacementTarget);
+           
            
            console.log(obj);
         }
