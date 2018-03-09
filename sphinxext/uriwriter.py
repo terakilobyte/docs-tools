@@ -48,7 +48,6 @@ URIWRITER_TEMPLATE = fett.Template('''
         </fieldset>
     <fieldset>
       <button id="add" onclick="addRow('{{url}}')">+</button>
-       <div class="host"></div>
     </fieldset>
     </div>
   </form>
