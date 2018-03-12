@@ -56,21 +56,9 @@ def parse_keys(lines):
             print uriMapItem[0] + uriMapItem[1]
             localkey = uriMapItem[0]
             uriMap[localkey] = uriMapItem[1]
-            
-        indentation_match = LEADING_WHITESPACE.match(value)
-        if indentation_match is None:
-            value = value.strip()
-        else:
-            indentation = len(indentation_match.group(1))
-            lines = [line[indentation:] for line in value.split('\n')]
-            if lines[-1] == '':
-                lines.pop()
 
-            value = '\n'.join(lines)
 
-        result[match.group(1)] = value
-
-    return result
+    return uriMap
 
 
 class UrimapperDirective(Directive):
