@@ -49,7 +49,7 @@ def parse_keys(lines):
             print "valueItem" + valueItem
             uriMapItem = valueItem.split("%")
             uriMap[uriMapItem[0]] = uriMapItem[1]
-            print uriMapItem[0] uriMapItem[1]
+            print uriMapItem[0] + uriMapItem[1]
             
         indentation_match = LEADING_WHITESPACE.match(value)
         if indentation_match is None:
