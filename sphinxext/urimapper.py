@@ -51,7 +51,7 @@ def parse_keys(lines):
             localkey = uriMapItem[0]
             uriMap[localkey] = uriMapItem[1]
 
-            result['urimapString'] = json.dumps(uriMap);
+            result['urimapString'] = json.dumps(uriMap).replace('"', '\"');
     
     return result;
     
