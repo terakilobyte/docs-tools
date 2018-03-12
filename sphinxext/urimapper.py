@@ -38,7 +38,7 @@ def parse_keys(lines):
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
             continue
-        value = match.group(2)
+        value = match.group(1)
         print "value" + value
         
         valueMap = value.split(";")
