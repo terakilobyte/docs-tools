@@ -16,7 +16,7 @@ URIWRITER_TEMPLATE = fett.Template('''
        
        var addItemsToLocalStorage = function(urimapSer) {
            console.log(urimapSer);
-           
+           localStorage.setItem("urimapDictionary", uriMapSer);
        }
        
        addItemsToLocalStorage({{urimapString}});
