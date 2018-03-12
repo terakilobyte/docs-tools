@@ -1,5 +1,6 @@
 import fett
 import re
+import json
 from docutils.parsers.rst import Directive, directives
 from docutils import statemachine
 from docutils.utils.error_reporting import ErrorString
@@ -11,7 +12,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
-       addItemsToLocalStorage({{urimapSer}});
+       addItemsToLocalStorage({{urimapString}});
        
        var addItemsToLocalStorage = function(urimapSer) {
        
@@ -57,9 +58,10 @@ def parse_keys(lines):
             localkey = uriMapItem[0]
             uriMap[localkey] = uriMapItem[1]
 
-
-    return uriMap
-
+            result['urimapString'] = json.dumps(uriMap);
+    
+    return result;
+    
 
 class UrimapperDirective(Directive):
     has_content = True
@@ -72,10 +74,8 @@ class UrimapperDirective(Directive):
         options = parse_keys(self.content)
         print options
        
-        if 'target' in options:
-            rendered = URIWRITER_TEMPLATE_TARGET.render(options)
-        else:
-            rendered = URIWRITER_TEMPLATE.render(options)
+      
+        rendered = URIWRITER_TEMPLATE.render(options)
        
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
