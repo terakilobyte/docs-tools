@@ -11,6 +11,8 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
+       localStorage.setItem("StorageTest", "hi");
+       
        var urlstring = '{{url}}';
        var current = '<URISTRING>';
               
