@@ -49,7 +49,7 @@ def parse_keys(lines):
         valueMap = value.split(";")
         for valueItem in valueMap:
             if valueItem is None:
-              continue
+              break
             print "valueItem" + valueItem + "endItem"
             uriMapItem = None
             uriMapItem = valueItem.split("%")
