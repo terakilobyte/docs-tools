@@ -39,6 +39,7 @@ def parse_keys(lines):
         if match is None:
             print "no match"
             continue
+        print "**********"
         print "match" + match.group(1)
         value = match.group(1)
         print "value" + value
