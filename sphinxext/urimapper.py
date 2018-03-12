@@ -43,12 +43,12 @@ def parse_keys(lines):
         print "match" + match.group(1)
         value = match.group(1)
         print "value" + value
-        if value is None: 
-            continue
+        if not value: 
+            break
         
         valueMap = value.split(";")
         for valueItem in valueMap:
-            if valueItem is None:
+            if not valueItem:
               break
             print "valueItem" + valueItem + "endItem"
             uriMapItem = None
