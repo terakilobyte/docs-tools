@@ -9,7 +9,7 @@ from docutils.utils.error_reporting import ErrorString
 URIMAPPER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <input name="urimapper" value="{{urimapString}}" hidden="true">
+   <input name="urimapper" value='{{urimapString}}' hidden="true">
   
 ''')
 
