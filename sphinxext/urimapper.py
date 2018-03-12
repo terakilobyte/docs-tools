@@ -49,7 +49,7 @@ def parse_keys(lines):
             print "valueItem" + valueItem
             uriMapItem = valueItem.split("%")
             print uriMapItem[0] + uriMapItem[1]
-            var localkey = uriMapItem[0]
+            localkey = uriMapItem[0]
             uriMap[localkey] = uriMapItem[1]
             
         indentation_match = LEADING_WHITESPACE.match(value)
