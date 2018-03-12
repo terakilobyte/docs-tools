@@ -24,7 +24,7 @@ URIWRITER_TEMPLATE = fett.Template('''
 
 
 LEADING_WHITESPACE = re.compile(r'^\n?(\x20+)')
-PAT_KEY_VALUE = re.compile(r'([a-z_]+):(.*)', re.M)
+PAT_KEY_VALUE = re.compile(r'(.*)', re.M)
 
 
 
@@ -34,7 +34,7 @@ def parse_keys(lines):
     result = {}
     print lines
     text = '\n'.join(lines).replace('\t', '    ')
-    print text
+    print "INPUT" + text
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
             print "no match"
