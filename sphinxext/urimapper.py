@@ -11,9 +11,9 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
-       addItemsToLocalStorage({{urimap}});
+       addItemsToLocalStorage({{urimapSer}});
        
-       var addItemsToLocalStorage = function(urimap) {
+       var addItemsToLocalStorage = function(urimapSer) {
        
        
        }
@@ -32,7 +32,7 @@ PAT_KEY_VALUE = re.compile(r'(.*)', re.M)
 def parse_keys(lines):
     """docutils field list parsing is busted. Just do this ourselves."""
     result = {}
-    uriMap = []
+    uriMap = {}
     print lines
     text = '\n'.join(lines).replace('\t', '    ')
     print "INPUT" + text
