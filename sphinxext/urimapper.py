@@ -48,6 +48,7 @@ def parse_keys(lines):
         valueMap = value.split(";")
         for valueItem in valueMap:
             print "valueItem" + valueItem
+            uriMapItem = None
             uriMapItem = valueItem.split("%")
             print uriMapItem[0] + uriMapItem[1]
             localkey = uriMapItem[0]
