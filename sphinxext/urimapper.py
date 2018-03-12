@@ -62,7 +62,7 @@ def parse_keys(lines):
     return result
 
 
-class UriwriterDirective(Directive):
+class UrimapperDirective(Directive):
     has_content = True
     required_arguments = 0
     optional_arguments = 0
@@ -86,7 +86,7 @@ class UriwriterDirective(Directive):
 
 
 def setup(app):
-    app.add_directive('uriwriter', UriwriterDirective)
+    app.add_directive('urimapper', UrimapperDirective)
 
     return {
         'parallel_read_safe': True,
