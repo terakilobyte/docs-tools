@@ -12,12 +12,14 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
-       addItemsToLocalStorage({{urimapString}});
+       
        
        var addItemsToLocalStorage = function(urimapSer) {
-       
-       
+           console.log(urimapSer);
+           
        }
+       
+       addItemsToLocalStorage({{urimapString}});
  
    </script>
 ''')
