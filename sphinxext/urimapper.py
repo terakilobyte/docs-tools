@@ -6,24 +6,11 @@ from docutils import statemachine
 from docutils.utils.error_reporting import ErrorString
 
 
-URIWRITER_TEMPLATE = fett.Template('''
+URIMAPPER_TEMPLATE = fett.Template('''
 .. raw:: html
 
-   <p class="uriwriter">
-   <script type="text/javascript">
-      
-       /*
-        * loads once per urimapper: urimappers must be set globally
-        **/
-       
-       var addItemsToLocalStorage = function(urimapSer) {
-           console.log(urimapSer);
-           localStorage.setItem("urimapDictionary", urimapSer);
-       }
-       
-       addItemsToLocalStorage({{urimapString}});
- 
-   </script>
+   <input name="urimapper" value="{{urimapString}}" hidden="true">
+  
 ''')
 
 
