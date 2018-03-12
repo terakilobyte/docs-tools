@@ -32,11 +32,13 @@ PAT_KEY_VALUE = re.compile(r'(.*)', re.M)
 
 def parse_keys(lines):
     """docutils field list parsing is busted. Just do this ourselves."""
-    uriMap = {}
+  
+    result = {}
     print lines
     text = '\n'.join(lines).replace('\t', '    ')
     print "INPUT:" + text
     for match in PAT_KEY_VALUE.finditer(text):
+        uriMap = {}
         if match is None:
             print "no match"
             continue
