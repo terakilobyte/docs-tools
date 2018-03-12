@@ -44,6 +44,7 @@ def parse_keys(lines):
         valueMap = value.split(";")
         for valueItem in valueMap:
             uriMapItem = valueItem.split("%")
+            print uriMapItem
             uriMap[uriMapItem[0]] = uriMapItem[1]
             print UriMap
           
