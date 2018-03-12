@@ -45,7 +45,6 @@ def parse_keys(lines):
         print "value" + value
         
         valueMap = value.split(";")
-        print "split valMap" + valueMap
         for valueItem in valueMap:
             print "valueMap" + valueMap
             uriMapItem = valueItem.split("%")
