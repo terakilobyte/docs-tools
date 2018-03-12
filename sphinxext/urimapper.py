@@ -68,7 +68,7 @@ class UrimapperDirective(Directive):
         print options
        
       
-        rendered = URIWRITER_TEMPLATE.render(options)
+        rendered = URIMAPPER_TEMPLATE.render(options)
        
         rendered_lines = statemachine.string2lines(
             rendered, 4, convert_whitespace=1)
