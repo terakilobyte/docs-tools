@@ -47,6 +47,8 @@ def parse_keys(lines):
         
         valueMap = value.split(";")
         for valueItem in valueMap:
+            if valueItem is None:
+              continue
             print "valueItem" + valueItem
             uriMapItem = None
             uriMapItem = valueItem.split("%")
