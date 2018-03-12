@@ -12,7 +12,9 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
       
-       
+       /*
+        * loads once per urimapper: urimappers must be set globally
+        **/
        
        var addItemsToLocalStorage = function(urimapSer) {
            console.log(urimapSer);
