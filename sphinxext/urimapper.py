@@ -37,7 +37,9 @@ def parse_keys(lines):
     print text
     for match in PAT_KEY_VALUE.finditer(text):
         if match is None:
+            print "no match"
             continue
+        print "match" match.group(1)
         value = match.group(1)
         print "value" + value
         
