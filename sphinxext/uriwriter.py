@@ -9,11 +9,10 @@ URIWRITER_TEMPLATE = fett.Template('''
 .. raw:: html
 
    <p class="uriwriter">
+   
+   
    <script type="text/javascript">
-            
-       import * as eventFactory from './eventFactory';
-              
-     
+               
        //First, add this data to our cache
              
        function addRow() {
@@ -42,7 +41,7 @@ URIWRITER_TEMPLATE = fett.Template('''
        }
        
        function hollerStateChange() {
-           const event = new Event(eventFactory.getUriWriteEventName());
+           const event = new Event('uriwriter');
            this.dispatchEvent(event);
        }
        
