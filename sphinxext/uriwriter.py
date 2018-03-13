@@ -10,60 +10,46 @@ URIWRITER_TEMPLATE = fett.Template('''
 
    <p class="uriwriter">
    <script type="text/javascript">
-      
-       localStorage.setItem("StorageTest", "hi");
-       
-       var urlstring = '{{url}}';
-       var current = '<URISTRING>';
+            
               
-       var rollback = function () {
-       
-          console.log("ROLLBACK");
-              
-          var replacementTarget = document.getElementsByTagName("pre");
-              
-          for (var i = 0 ; i < replacementTarget.length ; i++) {
-                  
-              var item = replacementTarget.item(i);
-               
-              item.innerHTML = item.innerHTML.replace(current, "&lt;URISTRING&gt;");
-               
-          }
-                   
-       }       
-              
-              
-       function addRow(urlstring) {
-           if (current != urlstring) {
-                rollback();
-            }
+     
+       //First, add this data to our cache
+             
+       function addRow() {
            event.preventDefault();
-           var uri = urlstring;
-           var elements = document.getElementById(urlstring).elements;
-           var obj ={};
+           const elements = document.getElementById('uriwriter').elements;
+           var formObj ={};
            for(var i = 0 ; i < elements.length ; i++){
                var item = elements.item(i);
                obj[item.name] = item.value;
            }
-           var replacementTarget = document.getElementsByTagName("pre");
-           for(var i = 0 ; i < replacementTarget.length ; i++){
-               var item = replacementTarget.item(i);
- 
-               var newString = item.innerHTML.replace("&lt;URISTRING&gt;", uri).replace("{host}", obj['hostname']).
-                                    replace("{port}", obj['port']).
-                                    replace("{db}", obj['db']).
-                                    replace("{authdb}", obj['authdb']).
-                                    replace("{username}", obj['username']);
-               if (newString!=item.innerHTML) {
-                  current = newString;
-                  item.innerHTML = current;
-               }
-           }  
-       }   
+           
+           putFormDataInLocalStorage(formObj);
+           hollerStateChange();    
+       
+       }
+       
+       function putFormDataInLocalStorage(formdata) {
+           
+           if (null == formdata) {
+               console.log("Error persisting formdata");
+               return;
+           }
+        
+           localStorage.setItem(uriwriterForm, formdata);
+           
+       }
+       
+       function hollerStateChange() {
+           const event = new Event(getUriWriteEventName());
+           this.dispatchEvent(event);
+       }
+       
+       
            
  
    </script>
-   <form class="uriwriter" id="{{url}}" autocomplete="off">
+   <form class="uriwriter" id="uriwriter" autocomplete="off">
     
     <div class="row"><fieldset>
       <input id="username" class="doodad" type="text" name="username" required>
@@ -144,9 +130,6 @@ class UriwriterDirective(Directive):
     required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = True
-    
-    
-      
 
     def run(self):
         print self.content
