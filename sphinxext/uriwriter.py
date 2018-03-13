@@ -11,6 +11,7 @@ URIWRITER_TEMPLATE = fett.Template('''
    <p class="uriwriter">
    <script type="text/javascript">
             
+       import * as eventFactory from './eventFactory';
               
      
        //First, add this data to our cache
