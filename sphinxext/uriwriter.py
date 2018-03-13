@@ -36,7 +36,7 @@ URIWRITER_TEMPLATE = fett.Template('''
                return;
            }
         
-           localStorage.setItem(uriwriterForm, formdata);
+           localStorage.setItem('uriwriterForm', formdata);
            
        }
        
