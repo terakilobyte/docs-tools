@@ -42,7 +42,8 @@ URIWRITER_TEMPLATE = fett.Template('''
        
        function hollerStateChange() {
            const event = new Event('uriwriter');
-           this.dispatchEvent(event);
+           console.log("about to dispatch");
+           document.dispatchEvent(event);
        }
        
        
