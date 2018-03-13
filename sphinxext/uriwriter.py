@@ -21,7 +21,7 @@ URIWRITER_TEMPLATE = fett.Template('''
            var formObj ={};
            for(var i = 0 ; i < elements.length ; i++){
                var item = elements.item(i);
-               obj[item.name] = item.value;
+               formObj[item.name] = item.value;
            }
            
            putFormDataInLocalStorage(formObj);
