@@ -6,6 +6,7 @@ import * as componentLightbox from './componentLightbox';
 import * as componentSidebar from './componentSidebar';
 import * as componentTabs from './componentTabs';
 import * as componentVersionSelector from './componentVersionSelector';
+import * as componentUrimapper from './componentUrimapper';
 import * as componentUriwriter from './componentUriwriter';
 
 class FastNav {
@@ -35,6 +36,7 @@ $(() => {
     fastNav.register(componentTabs);
     fastNav.register(componentCopyButtons);
     fastNav.register(componentVersionSelector);
+    fastNav.register(componentUrimapper);
     fastNav.register(componentUriwriter);
 
     /* Hide toc if there aren't any items */
