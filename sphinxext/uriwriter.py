@@ -56,9 +56,9 @@ URIWRITER_TEMPLATE = fett.Template('''
     <button id="uriwriter_env" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select environment
         <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a id="uriwriter_sel" href="#">Standalone MongoDB</a></li>
-                <li><a href="#">Atlas (Cloud)</a></li>
-                <li><a href="#">Replica Set</a></li>
+                <li><a class="uriwriter_sel" href="#">Standalone MongoDB</a></li>
+                <li><a class="uriwriter_sel" href="#">Atlas (Cloud)</a></li>
+                <li><a class="uriwriter_sel" href="#">Replica Set</a></li>
            </ul>
     </fieldset>
     <fieldset>
