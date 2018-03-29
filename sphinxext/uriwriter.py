@@ -53,7 +53,6 @@ URIWRITER_TEMPLATE = fett.Template('''
    <form class="uriwriter" id="uriwriter" autocomplete="off">
     <fieldset>
     <div id="userinfo" class="row">
-    <label for="uriwriter_env">Select Environment</label>
     <button id="uriwriter_env" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">choose
         <span class="caret"></span></button>
             <ul id="uriwriter_sel" class="dropdown-menu">
@@ -65,17 +64,14 @@ URIWRITER_TEMPLATE = fett.Template('''
     <fieldset>
       <input id="uriwriter_username" type="text" name="username" required>
       <label for="username">Username</label>
-      <div class="after"></div>
     </fieldset>
     <fieldset>
       <input id="uriwriter_db" type="text" name="db" required>
       <label for="db">Database name</label>
-      <div class="db"></div>
     </fieldset>
     <fieldset>
       <input id="uriwriter_authdb" type="" name="authdb" required>
       <label for="authdb">Authentication database</label>
-      <div class="authdb"></div>
     </fieldset>
     </div>
     <div class="flex-container">
