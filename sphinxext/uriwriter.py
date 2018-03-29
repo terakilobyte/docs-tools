@@ -73,6 +73,10 @@ URIWRITER_TEMPLATE = fett.Template('''
       <input id="uriwriter_authdb" type="" name="authdb" required>
       <label for="authdb">Authentication database</label>
     </fieldset>
+      <div id="hostlistwrapper">
+    <ul id="hostlist" style="list-style-type:none">
+    </ul>
+    </div>
     </div>
     <div class="flex-container">
     
@@ -88,10 +92,7 @@ URIWRITER_TEMPLATE = fett.Template('''
       <button id="uriwriter_act">+</button>
     </fieldset>
     </div>
-      <div id="hostlistwrapper">
-    <ul id="hostlist" style="list-style-type:none">
-    </ul>
-    </div>
+    
     </div>
   </form>
    </p>
