@@ -51,48 +51,46 @@ URIWRITER_TEMPLATE = fett.Template('''
  
    </script>
    <form class="uriwriter" id="uriwriter" autocomplete="off">
-    <fieldset>
-    <div id="userinfo" class="row">
-    <button id="uriwriter_env" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">choose
-        <span class="caret"></span></button>
-            <ul id="uriwriter_sel" class="dropdown-menu">
-                <li><a href="#">Standalone MongoDB</a></li>
-                <li><a href="#">Atlas (Cloud)</a></li>
-                <li><a href="#">Replica Set</a></li>
-           </ul>
-    </fieldset>
-    <fieldset>
-      <input id="uriwriter_username" type="text" name="username" required>
-      <label for="username">Username</label>
-    </fieldset>
-    <fieldset>
-      <input id="uriwriter_db" type="text" name="db" required>
-      <label for="db">Database name</label>
-    </fieldset>
-    <fieldset>
-      <input id="uriwriter_authdb" type="" name="authdb" required>
-      <label for="authdb">Authentication database</label>
-    </fieldset>
-      <div id="hostlistwrapper">
-    <ul id="hostlist" style="list-style-type:none">
-    </ul>
-    </div>
+     <div id="userinfo" class="row">
+        <fieldset>
+        <button id="uriwriter_env" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">choose
+            <span class="caret"></span></button>
+                <ul id="uriwriter_sel" class="dropdown-menu">
+                    <li><a href="#">Standalone MongoDB</a></li>
+                    <li><a href="#">Atlas (Cloud)</a></li>
+                    <li><a href="#">Replica Set</a></li>
+                </ul>
+        </fieldset>
+        <fieldset>
+            <input id="uriwriter_username" type="text" name="username" required>
+            <label for="username">Username</label>
+        </fieldset>
+        <fieldset>
+            <input id="uriwriter_db" type="text" name="db" required>
+            <label for="db">Database name</label>
+        </fieldset>
+        <fieldset>
+            <input id="uriwriter_authdb" type="" name="authdb" required>
+            <label for="authdb">Authentication database</label>
+        </fieldset>
     </div>
     <div class="flex-container">
-    
-    <div><fieldset class="hostgrid">
-      <input id="hostname" type="text" name="hostname" required>
-      <label for="hostname">Hostname or IP</label>
-    </fieldset>
-    <fieldset class="hostgrid">
-      <input id="port" type="text" name="port" required>
-      <label for="port">Port</label>
-    </fieldset>
-    <fieldset class="hostgrid">
-      <button id="uriwriter_act">+</button>
-    </fieldset>
+        <fieldset class="hostgrid">
+            <input id="hostname" type="text" name="hostname" required>
+            <label for="hostname">Hostname or IP</label>
+        </fieldset>
+        <fieldset class="hostgrid">
+            <input id="port" type="text" name="port" required>
+            <label for="port">Port</label>
+        </fieldset>
+        <fieldset class="hostgrid">
+            <button id="uriwriter_act">+</button>
+        </fieldset>
     </div>
-    
+    </form>
+    <div id="hostlistwrapper">
+       <ul id="hostlist" style="list-style-type:none">
+       </ul>
     </div>
   </form>
    </p>
