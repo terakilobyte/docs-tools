@@ -1,10 +1,12 @@
-from docutils import statemachine
+from docutils import statemachine, nodes
 from docutils.nodes import Element, Text
 from docutils.parsers.rst import Directive, directives
 from template import populate, Options
 import sphinx
 import fett
 import yaml
+
+from sphinx.util.nodes import nested_parse_with_titles
 
 CARD_GROUP_TEMPLATE_LARGE = fett.Template('''
 .. raw:: html
@@ -111,6 +113,19 @@ class CardGroup(Directive):
             "large": CARD_GROUP_TEMPLATE_LARGE,
             "small": CARD_GROUP_TEMPLATE_SMALL
         }
+
+        ### Testing
+        node = nodes.section()
+        node.document = self.state.document
+        link = data['cards'][0]['link']
+        linkViewList = statemachine.ViewList()
+        linkViewList.append(link, "testfilepleaseignore.rst", 420)
+        nested_parse_with_titles(self.state, linkViewList, node)
+
+        print('parsed_link =>', node)
+
+        ### End Testing
+
         if card_type in fett_templates.keys():
             rendered = fett_templates[card_type].render(data)
             rendered_lines = statemachine.string2lines(
